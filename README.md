@@ -1,12 +1,12 @@
 ---
-title: Openai Whisper Stt
-emoji: 🐢
+title: OpenAI's Whisper Real-time Demo
+emoji: 🎙️
 colorFrom: indigo
 colorTo: red
 sdk: gradio
 sdk_version: 3.3.1
 app_file: app.py
-pinned: false
+pinned: true
 license: mit
 ---
 
