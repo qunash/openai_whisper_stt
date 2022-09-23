@@ -19,7 +19,10 @@ def debug(audio, state="", delay=0.2):
   # print(state)
   return state, state
 
-delay_slider = gr.inputs.Slider(minimum=0, maximum=10, default=0.2, label="Delay (seconds)")
+
+delay_slider = gr.inputs.Slider(minimum=0, maximum=10, default=0.2, label="Delay (seconds). The rate of transcription (1 sec + delay).")
+
+title = "OpenAI's Whisper Real-time Demo"
 
 gr.Interface(
     fn=transcribe,
@@ -35,5 +38,6 @@ gr.Interface(
         "state"
     ],
     live=True,
-    allow_flagging='never'
-).launch()
+    allow_flagging='never',
+    title=title,
+).launch(enable_queue=True)
