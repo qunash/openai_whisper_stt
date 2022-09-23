@@ -8,8 +8,6 @@ model = whisper.load_model("base")
 def transcribe(audio, state={}, delay=0.2, lang=None, translate=False):
     time.sleep(delay)
 
-    # state = {"transcription": "", "translation": ""}
-
     transcription = model.transcribe(
         audio,
         language = lang if lang != "auto" else None
@@ -71,7 +69,6 @@ lang_dropdown = gr.inputs.Dropdown(choices=["auto", "english", "afrikaans",
                                             "yoruba"],
                                    label="Language", default="auto", type="value")
 
-# chechbox whether to translate
 translate_checkbox = gr.inputs.Checkbox(label="Translate to English", default=False)
 
 
@@ -84,9 +81,7 @@ state = gr.State({"transcription": "", "translation": ""})
 
 gr.Interface(
     fn=transcribe,
-    # fn=debug,
     inputs=[
-        # gr.Audio(source="upload", type="filepath"),
         gr.Audio(source="microphone", type="filepath", streaming=True),
         state,
         delay_slider,
