@@ -10,4 +10,8 @@ pinned: true
 license: mit
 ---
 
+OpenAI's Whisper Real-time Demo
+
+A simple demo of OpenAI's [**Whisper**](https://github.com/openai/whisper) speech recognition model.
+
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
